@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dp.sdk.container.pause;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/pause;pause";
+
+message Request {
+  string id = 1;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+}

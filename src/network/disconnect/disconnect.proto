@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.network.disconnect;
+
+option go_package = "github.com/dpanel-cn/proto/gen/network/disconnect;disconnect";
+
+message Request {
+  string id = 1;
+  string network_id = 2;
+  string container_id = 3;
+  bool force = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package dp.sdk.image.load;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/load;load";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string archive_base64 = 1;
+  bool quiet = 2;
+  google.protobuf.Struct platform = 3;
+  repeated google.protobuf.Struct platforms = 4;
+  int64 limit_bytes = 5;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

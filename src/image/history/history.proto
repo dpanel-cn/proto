@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.image.history;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/history;history";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  google.protobuf.Struct platform = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

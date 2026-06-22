@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.container.kill;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/kill;kill";
+
+message Request {
+  string id = 1;
+  string signal = 2;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+  string signal = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dp.sdk.volume.remove;
+
+option go_package = "github.com/dpanel-cn/proto/gen/volume/remove;remove";
+
+message Request {
+  string id = 1;
+  string volume_id = 2;
+  bool force = 3;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

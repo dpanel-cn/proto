@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.image.create;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/create;create";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string reference = 1;
+  google.protobuf.Value registry_auth = 2;
+  string platform = 3;
+  int64 limit_bytes = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

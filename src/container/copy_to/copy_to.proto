@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dp.sdk.container.copy_to;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/copy_to;copyto";
+
+message Request {
+  string id = 1;
+  string path = 2;
+  string archive_base64 = 3;
+  bool allow_overwrite_dir_with_file = 4;
+  bool copy_uid_gid = 5;
+}
+
+message Response {
+  string id = 1;
+  string path = 2;
+  int64 archive_bytes = 3;
+  string action = 4;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package dp.sdk.container.commit;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/commit;commit";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  string reference = 2;
+  string comment = 3;
+  string author = 4;
+  repeated string changes = 5;
+  bool pause = 6;
+  google.protobuf.Struct config = 7;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

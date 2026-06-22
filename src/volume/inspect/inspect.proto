@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dp.sdk.volume.inspect;
+
+option go_package = "github.com/dpanel-cn/proto/gen/volume/inspect;inspect";
+
+message Request {
+  string id = 1;
+  string volume_id = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

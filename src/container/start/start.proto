@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.container.start;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/start;start";
+
+message Request {
+  string id = 1;
+  string checkpoint_id = 2;
+  string checkpoint_dir = 3;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+}

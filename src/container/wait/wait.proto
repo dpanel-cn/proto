@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.container.wait;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/wait;wait";
+
+message Request {
+  string id = 1;
+  string condition = 2;
+  optional int32 timeout_seconds = 3;
+}
+
+message Response {
+  bytes raw_json = 1;
+  string status = 2;
+}

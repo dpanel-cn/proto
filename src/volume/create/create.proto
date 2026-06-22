@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.volume.create;
+
+option go_package = "github.com/dpanel-cn/proto/gen/volume/create;create";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  google.protobuf.Struct options = 1;
+  google.protobuf.Struct create_options = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

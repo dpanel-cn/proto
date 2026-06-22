@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dp.sdk.container.stat_path;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/stat_path;statpath";
+
+message Request {
+  string id = 1;
+  string path = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

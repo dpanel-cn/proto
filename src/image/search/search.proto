@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.image.search;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/search;search";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string term = 1;
+  google.protobuf.Value registry_auth = 2;
+  google.protobuf.Struct filters = 3;
+  int32 limit = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

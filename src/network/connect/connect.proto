@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package dp.sdk.network.connect;
+
+option go_package = "github.com/dpanel-cn/proto/gen/network/connect;connect";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  string network_id = 2;
+  string container_id = 3;
+  google.protobuf.Struct endpoint = 4;
+  google.protobuf.Struct endpoint_config = 5;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

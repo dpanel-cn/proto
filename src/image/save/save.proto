@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.image.save;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/save;save";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  repeated string ids = 2;
+  repeated google.protobuf.Struct platforms = 3;
+  int64 limit_bytes = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

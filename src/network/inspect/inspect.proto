@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.network.inspect;
+
+option go_package = "github.com/dpanel-cn/proto/gen/network/inspect;inspect";
+
+message Request {
+  string id = 1;
+  string network_id = 2;
+  string scope = 3;
+  bool verbose = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

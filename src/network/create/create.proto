@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package dp.sdk.network.create;
+
+option go_package = "github.com/dpanel-cn/proto/gen/network/create;create";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string name = 1;
+  google.protobuf.Struct options = 2;
+  google.protobuf.Struct create_options = 3;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

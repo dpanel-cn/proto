@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.container.stats;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/stats;stats";
+
+message Request {
+  string id = 1;
+  optional bool one_shot = 2;
+  bool stream = 3;
+}
+
+message Response {
+  bytes raw_json = 1;
+  string os_type = 2;
+  string id = 3;
+  string name = 4;
+}

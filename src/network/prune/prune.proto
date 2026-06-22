@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dp.sdk.network.prune;
+
+option go_package = "github.com/dpanel-cn/proto/gen/network/prune;prune";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  google.protobuf.Struct filters = 1;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

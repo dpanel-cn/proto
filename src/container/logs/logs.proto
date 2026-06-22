@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package dp.sdk.container.logs;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/logs;logs";
+
+message Request {
+  string id = 1;
+  optional bool show_stdout = 2;
+  optional bool show_stderr = 3;
+  string since = 4;
+  string until = 5;
+  bool timestamps = 6;
+  bool follow = 7;
+  string tail = 8;
+  bool details = 9;
+  int64 limit_bytes = 10;
+}
+
+message Response {
+  string id = 1;
+  string raw = 2;
+  string stdout = 3;
+  string stderr = 4;
+  bool demuxed = 5;
+  bool truncated = 6;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package dp.sdk.container.copy_from;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/copy_from;copyfrom";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  string path = 2;
+  int64 limit_bytes = 3;
+}
+
+message Response {
+  string id = 1;
+  string path = 2;
+  string archive_base64 = 3;
+  int64 archive_bytes = 4;
+  bool truncated = 5;
+  google.protobuf.Struct stat = 6;
+}

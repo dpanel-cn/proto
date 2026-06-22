@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package dp.sdk.container.list;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/list;list";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  optional bool all = 1;
+  bool size = 2;
+  bool latest = 3;
+  string since = 4;
+  string before = 5;
+  int32 limit = 6;
+  google.protobuf.Struct filters = 7;
+}
+
+message List {
+  repeated Item items = 1;
+}
+
+message Item {
+  string id = 1;
+  string name = 2;
+  string image = 3;
+  string state = 4;
+  string status = 5;
+  string command = 6;
+  string network_mode = 7;
+  int64 created = 8;
+  string ip = 9;
+  repeated Port ports = 10;
+  repeated Mount mounts = 11;
+}
+
+message Port {
+  string ip = 1;
+  int32 private_port = 2;
+  int32 public_port = 3;
+  string type = 4;
+}
+
+message Mount {
+  string type = 1;
+  string name = 2;
+  string source = 3;
+  string destination = 4;
+  string mode = 5;
+  bool rw = 6;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dp.sdk.image.tag;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/tag;tag";
+
+message Request {
+  string source = 1;
+  string target = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

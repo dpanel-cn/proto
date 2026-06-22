@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dp.sdk.container.create;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/create;create";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string name = 1;
+  google.protobuf.Struct config = 2;
+  google.protobuf.Struct host_config = 3;
+  google.protobuf.Struct networking_config = 4;
+  google.protobuf.Struct platform = 5;
+}
+
+message Response {
+  string id = 1;
+  repeated string warnings = 2;
+}

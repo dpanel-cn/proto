@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package master.v1;
+
+option go_package = "github.com/dpanel-cn/proto/gen/go;proto";
+
+import "google/protobuf/struct.proto";
+
+// MasterAgentService 定义主控与 agent 的反向流命令通道。
+service MasterAgentService {
+  rpc Connect(stream google.protobuf.Struct) returns (stream google.protobuf.Struct);
+}
+
+// TelemetryService 定义 agent 与 master 的实时遥测流通道。
+service TelemetryService {
+  rpc Stream(stream TelemetryFrame) returns (stream TelemetryFrame);
+}
+
+// TelemetryFrame 承载心跳、实时统计和后续终端/日志等事件型数据。
+message TelemetryFrame {
+  string node_id = 1;
+  string session_id = 2;
+  string type = 3;
+  uint64 seq = 4;
+  int64 ts = 5;
+  bytes payload = 6;
+}
+
+// OpenService 定义 agent 主动调用 master 的开放命令入口。
+service OpenService {
+  rpc CmdToMaster(google.protobuf.Struct) returns (google.protobuf.Struct);
+}

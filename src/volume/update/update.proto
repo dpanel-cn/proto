@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dp.sdk.volume.update;
+
+option go_package = "github.com/dpanel-cn/proto/gen/volume/update;update";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  string volume_id = 2;
+  google.protobuf.Struct version = 3;
+  google.protobuf.Value version_index = 4;
+  google.protobuf.Struct options = 5;
+  google.protobuf.Struct update_options = 6;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.container.stop;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/stop;stop";
+
+message Request {
+  string id = 1;
+  string signal = 2;
+  optional int32 timeout_seconds = 3;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package dp.sdk.container.remove;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/remove;remove";
+
+message Request {
+  string id = 1;
+  bool force = 2;
+  bool remove_volumes = 3;
+  bool remove_links = 4;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+}

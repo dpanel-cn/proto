@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.image.remove;
+
+option go_package = "github.com/dpanel-cn/proto/gen/image/remove;remove";
+
+import "google/protobuf/struct.proto";
+
+message Request {
+  string id = 1;
+  bool force = 2;
+  bool prune_children = 3;
+  repeated google.protobuf.Struct platforms = 4;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dp.sdk.container.top;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/top;top";
+
+message Request {
+  string id = 1;
+  repeated string args = 2;
+}
+
+message Response {
+  bytes raw_json = 1;
+}

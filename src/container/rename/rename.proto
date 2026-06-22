@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dp.sdk.container.rename;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/rename;rename";
+
+message Request {
+  string id = 1;
+  string name = 2;
+}
+
+message Response {
+  string id = 1;
+  string name = 2;
+  string action = 3;
+}

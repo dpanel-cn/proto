@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dp.sdk.container.resize;
+
+option go_package = "github.com/dpanel-cn/proto/gen/container/resize;resize";
+
+message Request {
+  string id = 1;
+  uint32 height = 2;
+  uint32 width = 3;
+}
+
+message Response {
+  string id = 1;
+  string action = 2;
+  uint32 height = 3;
+  uint32 width = 4;
+}
