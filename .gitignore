@@ -18,6 +18,5 @@ tmp/
 .idea/
 .vscode/
 
-# Generated files and backups
-/gen/
+# Generated backups
 *.bak
